@@ -2,7 +2,6 @@
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
 using System.Data.Entity.ModelConfiguration;
-using Microsoft.SqlServer.Types;
 using EF6Example.Models;
 
 namespace EF6Example
@@ -23,8 +22,6 @@ namespace EF6Example
         {
             var objectContext = new ObjectContext("");
             objectContext.Translate<MyModel>(null);
-
-            var point = SqlGeography.Point(0, 0, 1);
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
