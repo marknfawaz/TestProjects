@@ -1,0 +1,14 @@
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\AspNetRoutes.dll.config
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\AspNetRoutes.dll
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\AspNetRoutes.pdb
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\Microsoft.Owin.dll
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\Owin.dll
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\Microsoft.Owin.xml
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\obj\Debug\AspNetRoutes.csprojAssemblyReference.cache
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\obj\Debug\AspNetRoutes.csproj.CoreCompileInputs.cache
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\obj\Debug\AspNetRoutes.csproj.CopyComplete
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\obj\Debug\AspNetRoutes.dll
+C:\Users\boudreaj\Source\Repos\samples-master\samples\aspnet\Katana\AspNetRoutes\obj\Debug\AspNetRoutes.pdb
+C:\Users\boudreaj\workspace\TestProjects\net45\AspNetRoutes\bin\AspNetRoutes.dll.config
