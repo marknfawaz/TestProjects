@@ -57,13 +57,13 @@ namespace IonicZipSample
         private IEnumerator<ZipEntry> _zipEntryEnumerator;
         private IEnumerator _enumerator;
 
-        // These two data types are not supported by DotNetZip
+        // These two data types are supported in DotNetZip, but only if .NET Framework is targeted.
         //private SelfExtractorFlavor _selfExtractorFlavor;
         //private SelfExtractorSaveOptions _selfExtractorSaveOptions;
 
         public void CallAll()
         {
-            // These two APIs are not supported by DotNetZip
+            // These two apis are supported in DotNetZip, but only if .NET Framework is targeted.
             //_zipFile.SaveSelfExtractor(_string, _selfExtractorFlavor);
             //_zipFile.SaveSelfExtractor(_string, _selfExtractorSaveOptions);
 
