@@ -11,13 +11,15 @@ namespace StaticFilesSample
         {
 #if DEBUG
             app.UseErrorPage();
+
+            PhysicalFileSystem defaultFS = new PhysicalFileSystem(@".\defaults");
 #endif
             // Remap '/' to '.\defaults\'.
             // Turns on static files and default files.
             app.UseFileServer(new FileServerOptions()
             {
                 RequestPath = PathString.Empty,
-                FileSystem = new PhysicalFileSystem(@".\defaults"),
+                FileSystem = defaultFS,
             });
 
             // Only serve files requested by name.
