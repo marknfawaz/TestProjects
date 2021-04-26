@@ -1,6 +1,10 @@
 ﻿using Owin;
 using Microsoft.Owin;
 using System.Collections.Generic;
+using System;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
 
 namespace BranchingPipelines
 {
@@ -8,6 +12,8 @@ namespace BranchingPipelines
     {
         public void Configuration(IAppBuilder app)
         {
+            app.CreatePerOwinContext<AppBuilderProvider>(() => new AppBuilderProvider(app));
+
             app.Use<AddBreadCrumbMiddleware>("start-of-the-line");
 
             app.Map("/branch1", app1 =>
@@ -51,6 +57,17 @@ namespace BranchingPipelines
         {
             IHeaderDictionary headers = context.Request.Headers;
             return headers.Get("User-Agent").Contains("Trident");
+        }
+
+        public class AppBuilderProvider : IDisposable
+        {
+            private IAppBuilder _app;
+            public AppBuilderProvider(IAppBuilder app)
+            {
+                _app = app;
+            }
+            public IAppBuilder Get() { return _app; }
+            public void Dispose() { }
         }
     }
 }
