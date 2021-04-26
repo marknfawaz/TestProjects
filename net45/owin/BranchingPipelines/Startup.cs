@@ -49,7 +49,8 @@ namespace BranchingPipelines
 
         private bool IsIE(IOwinContext context)
         {
-            return context.Request.Headers.Get("User-Agent").Contains("Trident");
+            IHeaderDictionary headers = context.Request.Headers;
+            return headers.Get("User-Agent").Contains("Trident");
         }
     }
 }
