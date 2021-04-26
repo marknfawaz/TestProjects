@@ -11,13 +11,15 @@ namespace BranchingPipelines
 
         public override Task Invoke(IOwinContext context)
         {
-            context.Response.ContentType = "text/plain";
+            IOwinRequest request = context.Request;
+            IOwinResponse response = context.Response;
+            response.ContentType = "text/plain";
 
-            string responseText = context.Request.Headers.Get("breadcrumbs") + "\r\n"
-                + "PathBase: " + context.Request.PathBase + "\r\n"
-                + "Path: " + context.Request.Path + "\r\n";
+            string responseText = request.Headers.Get("breadcrumbs") + "\r\n"
+                + "PathBase: " + request.PathBase + "\r\n"
+                + "Path: " + request.Path + "\r\n";
 
-            return context.Response.WriteAsync(responseText);
+            return response.WriteAsync(responseText);
         }
     }
 }

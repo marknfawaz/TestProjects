@@ -15,7 +15,8 @@ namespace BranchingPipelines
 
         public override Task Invoke(IOwinContext context)
         {
-            context.Request.Headers.Append("breadcrumbs", _breadcrumb);
+            IOwinRequest request = context.Request;
+            request.Headers.Append("breadcrumbs", _breadcrumb);
             return Next.Invoke(context);
         }
     }
