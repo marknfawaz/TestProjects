@@ -13,6 +13,10 @@ namespace BranchingPipelines
         public void Configuration(IAppBuilder app)
         {
             app.CreatePerOwinContext<AppBuilderProvider>(() => new AppBuilderProvider(app));
+            app.CreatePerOwinContext((IdentityFactoryOptions<AppBuilderProvider> options, IOwinContext owin) => new AppBuilderProvider(app));
+            app.CreatePerOwinContext(
+                (IdentityFactoryOptions<AppBuilderProvider> options, IOwinContext owin) => new AppBuilderProvider(app),
+                (IdentityFactoryOptions<AppBuilderProvider> options, AppBuilderProvider appProv) => new AppBuilderProvider(app));
 
             app.Use<AddBreadCrumbMiddleware>("start-of-the-line");
 
