@@ -15,6 +15,9 @@ namespace AspNetRoutes
         // Invoked once per request.
         public Task Invoke(IOwinContext context)
         {
+            ResponseCookieCollection cookies = context.Response.Cookies;
+            cookies.Append("OwinCookieKey", "OwinCookieValue");
+
             context.Response.ContentType = "text/plain";
             return context.Response.WriteAsync("Hello World");
         }
