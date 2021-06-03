@@ -2,6 +2,10 @@
 using Microsoft.Owin;
 using Owin;
 using System;
+using Microsoft.Owin.Security;
+using System.Web;
+using System.Security.Claims;
+using System.Collections.Generic;
 
 namespace AspNetRoutes
 {
@@ -25,6 +29,20 @@ namespace AspNetRoutes
 
             context.Response.ContentType = "text/plain";
             return context.Response.WriteAsync("Hello World " + check);
+        }
+
+        public async Task<bool> SignUpUser(IAuthenticationManager authenticationManager)
+        {
+            List<ClaimsIdentity> claims = new List<ClaimsIdentity>();
+            AuthenticationProperties authProp = new AuthenticationProperties();
+
+            var authResult = await authenticationManager.AuthenticateAsync("");
+            authenticationManager.Challenge(new string[]{ "" });
+            var authTypes = authenticationManager.GetAuthenticationTypes();
+            authenticationManager.SignIn(claims.ToArray());
+            authenticationManager.SignOut(authProp, new string[] { "" });
+
+            return true;
         }
     }
 }
