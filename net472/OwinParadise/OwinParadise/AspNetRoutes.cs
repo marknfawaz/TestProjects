@@ -13,8 +13,8 @@ using Microsoft.AspNet.Identity.Owin;
 using System.Security.Claims;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Owin.Security.OpenIdConnect;
-using Microsoft.IdentityModel.Protocols;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PortingParadise
 {
@@ -22,11 +22,11 @@ namespace PortingParadise
     {
         public void Configuration(IAppBuilder app)
         {
-            app.Run(InvokeResponse);
+            app.Run(Invoke);
         }
 
         // Invoked once per request.
-        public Task InvokeResponse(IOwinContext context)
+        public Task Invoke(IOwinContext context)
         {
             ResponseCookieCollection cookies = context.Response.Cookies;
             cookies.Append("OwinCookieKey", "OwinCookieValue");
