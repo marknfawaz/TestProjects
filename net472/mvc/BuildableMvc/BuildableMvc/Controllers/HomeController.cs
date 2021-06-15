@@ -6,6 +6,8 @@ using System.Web;
 using System.Data.Entity;
 using System.Web.Mvc;
 using BuildableMvc.Attributes;
+using BuildableMvc.Models;
+using System.Threading.Tasks;
 
 namespace BuildableMvc.Controllers
 {
@@ -49,5 +51,35 @@ namespace BuildableMvc.Controllers
             return View();
 
         }
+
+        public ActionResult NotFoundAction()
+        {
+            return HttpNotFound();
+        }
+        public ActionResult NotFoundWithMessageAction()
+        {
+            return HttpNotFound("Message");
+        }
+
+        private void GetServicesFromDependencyContainer()
+        {
+            var service = DependencyResolver.Current.GetService(typeof(object));
+            var service2 = DependencyResolver.Current.GetService<object>();
+            var service3 = DependencyResolver.Current.GetService<ActionResult>();
+        }
+
+        private void ModelFunctions()
+        {
+            var product = new Product();
+
+            TryUpdateModel(product);
+
+            TryValidateModel(product);
+            TryValidateModel(product, "prefix");
+            
+            TryUpdateModel<Product>(product);
+            TryUpdateModel<Product>(product, "prefix");
+        }
+
     }
 }
