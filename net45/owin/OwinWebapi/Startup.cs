@@ -18,6 +18,8 @@ namespace WebApi
             // config.Formatters.JsonFormatter.UseDataContractJsonSerializer = true;
 
             builder.UseWebApi(config);
+
+            builder.UseOpenIdConnectAuthentication("clientid", "metaAddress");
         }
     }
 }
