@@ -35,9 +35,9 @@ namespace AspNetRoutes
         {
             List<ClaimsIdentity> claims = new List<ClaimsIdentity>();
             AuthenticationProperties authProp = new AuthenticationProperties();
-
             var authResult = await authenticationManager.AuthenticateAsync("");
-            authenticationManager.Challenge(new string[]{ "" });
+            var authResults = await authenticationManager.AuthenticateAsync(new string[] { "", "" });
+            authenticationManager.Challenge(authProp, new string[]{ "" });
             var authTypes = authenticationManager.GetAuthenticationTypes();
             authenticationManager.SignIn(claims.ToArray());
             authenticationManager.SignOut(authProp, new string[] { "" });
