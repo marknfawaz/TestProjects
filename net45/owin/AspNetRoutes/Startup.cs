@@ -6,6 +6,7 @@ using Microsoft.Owin.Security;
 using System.Web;
 using System.Security.Claims;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AspNetRoutes
 {
@@ -31,9 +32,9 @@ namespace AspNetRoutes
             return context.Response.WriteAsync("Hello World " + check);
         }
 
-        public async Task<bool> SignUpUser(IAuthenticationManager authenticationManager)
+        public async Task<bool> SignUpUser(IAuthenticationManager authenticationManager, ISecureDataFormat<AuthenticationTicket> df)
         {
-            List<ClaimsIdentity> claims = new List<ClaimsIdentity>();
+            List<ClaimsIdentity> claims = new List<ClaimsIdentity>() { new ClaimsIdentity() };
             AuthenticationProperties authProp = new AuthenticationProperties();
 
             var authResult = await authenticationManager.AuthenticateAsync("");
@@ -44,7 +45,11 @@ namespace AspNetRoutes
             authenticationManager.SignIn(claims.ToArray());
             authenticationManager.SignOut(authProp, new string[] { "" });
 
-            return true;
+            AuthenticationTicket at = new AuthenticationTicket(claims.First(), authProp);
+            string prot = df.Protect(at);
+            AuthenticationTicket unProtectedAT = df.Unprotect(prot);
+
+            return at.Equals(unProtectedAT);
         }
     }
 }
