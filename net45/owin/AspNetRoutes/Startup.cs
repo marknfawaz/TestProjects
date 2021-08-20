@@ -3,6 +3,7 @@ using Microsoft.Owin;
 using Owin;
 using System;
 using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.OAuth;
 using System.Web;
 using System.Security.Claims;
 using System.Collections.Generic;
@@ -48,6 +49,12 @@ namespace AspNetRoutes
             AuthenticationTicket at = new AuthenticationTicket(claims.First(), authProp);
             string prot = df.Protect(at);
             AuthenticationTicket unProtectedAT = df.Unprotect(prot);
+
+            OAuthAuthorizationServerOptions auth = new OAuthAuthorizationServerOptions()
+            {
+                AccessTokenExpireTimeSpan = new TimeSpan(),
+                AllowInsecureHttp = true,
+            };
 
             return at.Equals(unProtectedAT);
         }
