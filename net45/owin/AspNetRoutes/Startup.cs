@@ -4,6 +4,7 @@ using Owin;
 using System;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
+using Microsoft.Owin.Security.DataProtection;
 using System.Web;
 using System.Security.Claims;
 using System.Collections.Generic;
@@ -57,6 +58,14 @@ namespace AspNetRoutes
             };
 
             return at.Equals(unProtectedAT);
+        }
+
+        public void Protector(IDataProtectionProvider protector)
+        {
+            string[] purposes = new string[] { "","" };
+            IDataProtector prot1 = protector.Create(purposes);
+            DpapiDataProtectionProvider dpapi = new DpapiDataProtectionProvider();
+            IDataProtector prot2 = dpapi.Create(purposes);
         }
     }
 }
