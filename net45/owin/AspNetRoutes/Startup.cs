@@ -52,7 +52,6 @@ namespace AspNetRoutes
             ExternalLoginInfo infoAsync1 = await authenticationManager.GetExternalLoginInfoAsync();
             ExternalLoginInfo infoAsync2 = await authenticationManager.GetExternalLoginInfoAsync("key_here", "expected");
             List<AuthenticationDescription> desc = authenticationManager.GetExternalAuthenticationTypes().ToList();
-            ClaimsIdentity iden = authenticationManager.CreateTwoFactorRememberBrowserIdentity("userID");
             bool rem = authenticationManager.TwoFactorBrowserRemembered("userID");
             bool remAsync = await authenticationManager.TwoFactorBrowserRememberedAsync("userID");
 
