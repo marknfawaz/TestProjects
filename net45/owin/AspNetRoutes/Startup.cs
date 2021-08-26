@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using System.Security.Claims;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Owin.Infrastructure;
 
 namespace AspNetRoutes
 {
@@ -79,9 +80,9 @@ namespace AspNetRoutes
 
         public void UtilitiesLogger(ILogger logger, IAppBuilder app)
         {
-            Microsoft.Owin.Infrastructure.WebUtilities.AddQueryString("uri", "queryString");
-            Microsoft.Owin.Infrastructure.WebUtilities.AddQueryString("uri", new Dictionary<string, string>());
-            Microsoft.Owin.Infrastructure.WebUtilities.AddQueryString("uri", "name", "value");
+            WebUtilities.AddQueryString("uri", "queryString");
+            WebUtilities.AddQueryString("uri", new Dictionary<string, string>());
+            WebUtilities.AddQueryString("uri", "name", "value");
 
             logger.WriteInformation("message");
 
