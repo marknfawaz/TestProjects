@@ -5,6 +5,7 @@ using System;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Security.DataProtection;
+using Microsoft.AspNet.Identity.Owin;
 using System.Web;
 using System.Security.Claims;
 using System.Collections.Generic;
@@ -46,6 +47,13 @@ namespace AspNetRoutes
             var authTypes = authenticationManager.GetAuthenticationTypes();
             authenticationManager.SignIn(claims.ToArray());
             authenticationManager.SignOut(authProp, new string[] { "" });
+
+            ExternalLoginInfo info = authenticationManager.GetExternalLoginInfo();
+            ExternalLoginInfo infoAsync1 = await authenticationManager.GetExternalLoginInfoAsync();
+            ExternalLoginInfo infoAsync2 = await authenticationManager.GetExternalLoginInfoAsync("key_here", "expected");
+            List<AuthenticationDescription> desc = authenticationManager.GetExternalAuthenticationTypes().ToList();
+            bool rem = authenticationManager.TwoFactorBrowserRemembered("userID");
+            bool remAsync = await authenticationManager.TwoFactorBrowserRememberedAsync("userID");
 
             AuthenticationTicket at = new AuthenticationTicket(claims.First(), authProp);
             string prot = df.Protect(at);
