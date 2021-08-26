@@ -5,8 +5,9 @@ using System;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Logging;
+using Microsoft.Owin.Security.Google;
 using Microsoft.AspNet.Identity.Owin;
-using System.Web;
 using System.Security.Claims;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,6 +75,17 @@ namespace AspNetRoutes
             IDataProtector prot1 = protector.Create(purposes);
             DpapiDataProtectionProvider dpapi = new DpapiDataProtectionProvider();
             IDataProtector prot2 = dpapi.Create(purposes);
+        }
+
+        public void UtilitiesLogger(ILogger logger, IAppBuilder app)
+        {
+            Microsoft.Owin.Infrastructure.WebUtilities.AddQueryString("uri", "queryString");
+            Microsoft.Owin.Infrastructure.WebUtilities.AddQueryString("uri", new Dictionary<string, string>());
+            Microsoft.Owin.Infrastructure.WebUtilities.AddQueryString("uri", "name", "value");
+
+            logger.WriteInformation("message");
+
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions());
         }
     }
 }
