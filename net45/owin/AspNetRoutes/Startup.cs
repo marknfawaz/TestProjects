@@ -2,16 +2,19 @@
 using Microsoft.Owin;
 using Owin;
 using System;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.OAuth;
-using Microsoft.Owin.Security.DataProtection;
+using Microsoft.Owin.Infrastructure;
 using Microsoft.Owin.Logging;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Notifications;
+using Microsoft.Owin.Security.OAuth;
 using Microsoft.AspNet.Identity.Owin;
 using System.Security.Claims;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Owin.Infrastructure;
+using Microsoft.Owin.Security.OpenIdConnect;
+using Microsoft.IdentityModel.Protocols;
 
 namespace AspNetRoutes
 {
@@ -87,6 +90,14 @@ namespace AspNetRoutes
             logger.WriteInformation("message");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions());
+        }
+
+        public void OnAuthenticationFailed(IOwinContext context, BaseNotification<OpenIdConnectAuthenticationOptions> baseNotif)
+        {
+            OpenIdConnectAuthenticationOptions options = new OpenIdConnectAuthenticationOptions();
+            RedirectToIdentityProviderNotification<OpenIdConnectMessage, OpenIdConnectAuthenticationOptions> redirectContext = new RedirectToIdentityProviderNotification<OpenIdConnectMessage, OpenIdConnectAuthenticationOptions>(context, options);
+            redirectContext.HandleResponse();
+            baseNotif.HandleResponse();
         }
     }
 }
