@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Owin.Security.Authorization;
 using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Authorization;
+using Microsoft.Owin.Security.DataHandler;
+using Microsoft.Owin.Security.DataHandler.Encoder;
 using System.Security.Claims;
 
 namespace OwinExtraAPI
@@ -29,6 +31,18 @@ namespace OwinExtraAPI
 
             AuthorizationPolicyBuilder apolBuild = new AuthorizationPolicyBuilder(apol);
             apolBuild = apolBuild.AddRequirements(req);
+        }
+
+        public void OwinDataHandler(ITextEncoder encoder, SecureDataFormat<AuthenticationProperties> secure)
+        {
+            AuthenticationProperties props = new AuthenticationProperties();
+
+            string secured = secure.Protect(props);
+            AuthenticationProperties unsecured = secure.Unprotect(secured);
+
+            byte[] decoded = new byte[10];
+            string encoded = encoder.Encode(decoded);
+            decoded = encoder.Decode(encoded);
         }
     }
 }
