@@ -7,6 +7,7 @@ using Microsoft.Owin.Logging;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
+using Microsoft.Owin.Security.Infrastructure;
 using Microsoft.Owin.Security.Notifications;
 using Microsoft.Owin.Security.OAuth;
 using Microsoft.AspNet.Identity.Owin;
@@ -98,6 +99,16 @@ namespace AspNetRoutes
             RedirectToIdentityProviderNotification<OpenIdConnectMessage, OpenIdConnectAuthenticationOptions> redirectContext = new RedirectToIdentityProviderNotification<OpenIdConnectMessage, OpenIdConnectAuthenticationOptions>(context, options);
             redirectContext.HandleResponse();
             baseNotif.HandleResponse();
+        }
+
+        public void OwinSecurityInfrastructure(AuthenticationTokenCreateContext create, AuthenticationTokenReceiveContext receive)
+        {
+            string serializedTicket = create.SerializeTicket();
+            create.SetToken("");
+            receive.DeserializeTicket(serializedTicket);
+
+            SecurityHelper helper = new SecurityHelper();
+            helper.LookupChallenge("Authentication_Type", AuthenticationMode.Active);
         }
     }
 }
