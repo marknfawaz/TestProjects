@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="TC10WsHttpAndNetPipe.Service1" CodeBehind="Service1.svc.cs" %>
