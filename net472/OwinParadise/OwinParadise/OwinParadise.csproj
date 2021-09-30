@@ -46,6 +46,9 @@
     <Reference Include="Microsoft.IdentityModel.Logging, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.3.0\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.40306.1554, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.4.403061554\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.IdentityModel.Protocols, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Protocols.5.3.0\lib\net461\Microsoft.IdentityModel.Protocols.dll</HintPath>
     </Reference>
@@ -67,14 +70,23 @@
     <Reference Include="Microsoft.Owin.Host.HttpListener, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Host.HttpListener.2.1.0\lib\net45\Microsoft.Owin.Host.HttpListener.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Hosting, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Hosting.4.2.0\lib\net45\Microsoft.Owin.Hosting.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.4.2.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Security.Authorization, Version=1.2.0.1, Culture=neutral, PublicKeyToken=ba8e29017989cc66, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Authorization.1.2.0.1\lib\net452\Microsoft.Owin.Security.Authorization.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
@@ -127,6 +139,7 @@
     <Compile Include="Embedded.cs" />
     <Compile Include="HelloWorld.cs" />
     <Compile Include="HelloWorldRawOwin.cs" />
+    <Compile Include="OwinExtraApi.cs" />
     <Compile Include="OwinSelfHost.cs" />
     <Compile Include="OwinWebAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
