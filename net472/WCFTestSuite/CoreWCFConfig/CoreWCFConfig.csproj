@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Web.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CoreWCF.ConfigurationManager">
+      <HintPath>..\..\..\..\..\Administrator\Projects\CoreWCF\bin\Debug\CoreWCF.ConfigurationManager\netstandard2.0\CoreWCF.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreWCF.Http">
+      <HintPath>..\..\..\..\..\Administrator\Projects\CoreWCF\bin\Debug\CoreWCF.ConfigurationManager\netstandard2.0\CoreWCF.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreWCF.NetTcp">
+      <HintPath>..\..\..\..\..\Administrator\Projects\CoreWCF\bin\Debug\CoreWCF.ConfigurationManager\netstandard2.0\CoreWCF.NetTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="CoreWCF.Primitives">
+      <HintPath>..\..\..\..\..\Administrator\Projects\CoreWCF\bin\Debug\CoreWCF.ConfigurationManager\netstandard2.0\CoreWCF.Primitives.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Service1.svc.cs">
+      <DependentUpon>Service1.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Update="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+
+</Project>
