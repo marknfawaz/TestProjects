@@ -7,7 +7,7 @@ namespace MvcMusicStore.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        MusicStoreEntities storeDB = new MusicStoreEntities();
+        Models.MusicStoreEntities storeDB = new MusicStoreEntities();
 
         //
         // GET: /ShoppingCart/
