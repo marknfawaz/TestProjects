@@ -1,0 +1,316 @@
+/*=============================================================
+    Authour URI: www.binarytheme.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+/* ===========================================================
+   GENERAL STYLES   
+   ============================================================*/
+body {
+   font-family:'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;   
+    line-height:16px;
+     
+}
+
+h1, h2, h3, h4, h5, h6 {
+      font-family:'Open Sans', sans-serif;
+    font-weight: 500;
+   line-height:40px;
+  
+   
+}
+
+h1 {
+   font-weight: 700;
+font-size: 60px;
+color: rgba(62, 187, 152, 0.92);
+line-height: 60px;
+padding-bottom: 25px;
+border-bottom: 1px dotted rgba(0, 0, 0, 0.13);
+}
+.text-center {
+    text-align: center; 
+}
+
+.main-top-margin {
+     margin-top: 75px;
+    height: 126px;
+}
+.main-low-margin {
+     margin-top: 55px;
+}
+
+a,a:hover {
+    text-decoration:none;
+}
+
+p {
+    line-height: 30px;
+    margin-bottom: 23px;
+}
+
+.img-margin-product {
+    margin-top:30px;
+}
+.bottam-pad {
+     padding-bottom:40px;
+}
+.text-justify {
+    text-align:justify;
+}
+/* ==========================================================================
+   COLOR CODES
+   ========================================================================== */
+
+.color-red {
+    color:#ff0000;
+}
+
+.color-green {
+    color:#07BB00;
+}
+
+.color-light-blue {
+    color:#BB00BB;
+}
+
+.color-blue {
+    color:#0052FF;
+}
+.color-brown {
+    color:#EB8F2D;
+}
+.color-black {
+    color:#000000;
+}
+.color-white {
+    color:#fff !important;
+}
+
+
+/* ==========================================================================
+   HEADER SECTION
+   ========================================================================== */
+#space {
+     margin-top:550px;
+}
+
+/* ==========================================================================
+   WELCOME SECTION
+   ========================================================================== */
+#welcome {
+    padding:30px;
+    background-color:rgba(43, 115, 156, 0.72);
+
+  
+  
+}
+    #welcome h1 {
+        color:#fff;
+        font-size:60px;
+        font-weight:900;
+        line-height:60px;
+        padding-bottom:30px;
+        border:0px;
+    }
+       
+/* ==========================================================================
+   OFFER SECTION
+   ========================================================================== */ 
+    #offer {
+        margin-top:50px;
+    padding:30px;
+      padding-top:60px;
+    background-color:rgba(0, 0, 0, 0.84);
+
+  
+  
+}
+    #offer h1 {
+
+        color:#fff;
+        font-size:60px;
+        font-weight:900;
+        line-height:60px;
+        padding-bottom:30px;
+        border:0px;
+    }
+.ofr-spn {
+    color:#fff;
+}
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+
+#about-section {
+    background-color: #FAFAFA;
+}
+
+
+/*==========================================
+   SOCIAL SECTIONS
+    =====================================================*/
+#social {
+      padding:30px;
+    background-color:rgba(182, 182, 182, 0.97);
+    margin-top:100px;
+}
+ #social h1 {
+        color:#fff;
+        font-size:60px;
+        font-weight:900;
+        line-height:60px;
+        padding-bottom:30px;
+        border:0px;
+    }
+.color-facebook {
+    color:#3B5998;
+}
+.color-twitter {
+     color:#00aced;
+}
+.color-google-plus {
+     color:#dd4b39;
+}
+.color-linkedin {
+     color:#007bb6;
+}
+.color-pinterest {
+     color:#cb2027;
+}
+/* ===========================================================
+   BOOTSTRAP ELEMENTS CHANGES   
+   ============================================================*/
+.navbar {
+	font-size: 14px;
+}
+
+.navbar-inverse {
+	background: #000000;
+border-color: #5D5B66;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+	background: #ffffff;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #ffffff;
+	font-weight: bolder;
+	font-size: 25px;
+    font-weight:900;
+	letter-spacing: 2px;
+}
+.navbar-inverse :hover .navbar-brand:hover {
+	color: #ffffff;	
+}
+.navbar-inverse .navbar-nav > li > a {
+color: #FFFFFF;
+}
+.img-circle {
+border-radius: 10%;
+}
+/*=======================================
+    PRICING STYLES
+==================================================*/
+
+.pricing-table-main {
+  padding: 0;
+  margin: 30px 0;
+  line-height: 150%;
+  text-align: center;
+}
+
+.pricing-table-main li {
+  list-style: none;
+}
+
+.pricing-table-main > li {
+  color: #fff;
+ background-color: #979797;
+ 
+}
+
+.pricing-table-main > li.active {
+  z-index: 1;
+  color: #000;
+  -webkit-box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.5);
+          background-color: #A5C4EB;
+}
+
+.pricing-table-main .round-body {
+  display: table;
+  width: 135px;
+  height: 135px;
+  margin: 0 auto 14px auto;
+  border: 3px solid #fff;
+  border-radius: 100%;
+
+}
+.pricing-table-main .price {
+  display: table-cell;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.pricing-table-main .price .price-Unit {
+  display: block;
+}
+
+.pricing-table-main .price .unit-info {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.pricing-table-main h2 {
+  padding: 15px 0;
+  text-transform: uppercase;
+  font-weight:900;
+  border-bottom:1px dotted #fff;
+  margin-bottom:25px;
+}
+.pricing-table-main .main-features ul {
+  padding: 0;
+  margin: 0;
+}
+.pricing-table-main .main-features ul li {
+  padding: 7px 0;
+   border-bottom:1px dotted #fff;
+}
+.pricing-table-main .footer {
+  padding: 25px;
+  margin: 20px -16px 0;
+  background: #E7E6E6;
+}
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+
+#contact-section {
+    background-color: #FAFAFA;
+    margin-top:50px;
+}
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+   
+
+#footer {
+    background-color: #000; 
+    color: #fff; 
+    text-align: right; 
+    padding: 10px 30px 10px 30px;
+    
+}
+
+
