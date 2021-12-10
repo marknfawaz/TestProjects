@@ -188,6 +188,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HttpHandlers\TestHttpHandler.cs" />
+    <Compile Include="HttpModules\TestProperHttpModule.cs" />
     <Content Include="OtherPage.aspx" />
     <Content Include="Content\base.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -311,7 +313,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="HttpModules\TestHttpModule.cs" />
+    <Compile Include="HttpModules\TestImproperHttpModule.cs" />
+    <Compile Include="HttpModules\TestProperHttpModuleAlternate.cs" />
     <Compile Include="OtherPage.aspx.cs">
       <DependentUpon>OtherPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace eShopLegacyWebForms.HttpModules
 {
-    public class TestHttpModule : IHttpModule
+    public class TestImproperHttpModule : IHttpModule
     {
         public void Init(HttpApplication context)
         {
