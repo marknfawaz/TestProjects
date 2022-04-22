@@ -3,6 +3,9 @@ using System.Web.Http.OData;
 
 namespace BuildableWebApi.Controllers
 {
+    using System.Web.Http;
+    using System.Web.Http.OData;
+
     public class DataReadController : ApiController
     {
         [HttpGet]
@@ -10,7 +13,7 @@ namespace BuildableWebApi.Controllers
         [Route("")]
         public IHttpActionResult Get()
         {
-            return Ok();
+            return (IHttpActionResult)Ok();
         }
     }
 }
