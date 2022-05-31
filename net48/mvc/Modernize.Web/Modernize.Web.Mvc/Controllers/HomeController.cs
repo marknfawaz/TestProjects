@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using Modernize.Web.Facade;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,7 @@ namespace Modernize.Web.Mvc.Controllers
             StringBuilder str = new StringBuilder();
             //Gets physical path of the application root directory
             str.AppendLine(Server.MapPath("~"));
+            Factory.GetFacade<CustomerFacade>().GetCustomer();
 
             //Current directory of executable running the app
             str.AppendLine(Directory.GetCurrentDirectory());
