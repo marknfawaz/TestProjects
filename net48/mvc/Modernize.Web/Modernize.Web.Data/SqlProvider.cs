@@ -1,8 +1,5 @@
 ﻿using Modernize.Web.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Modernize.Web.Data
@@ -79,14 +76,14 @@ namespace Modernize.Web.Data
 
         }
 
-        public List<Purchase> GetPurchases()
+        public async Task<List<Purchase>> GetPurchases()
         {
-            return new List<Purchase>();
+            return await Task.Run(() => { return new List<Purchase>(); });
         }
 
-        public Purchase GetPurchase()
+        public async Task<Purchase> GetPurchase()
         {
-            return new Purchase();
+            return await Task.Run(() => { return new Purchase(); });
         }
 
         public void InsertPurchase(Purchase Purchase)

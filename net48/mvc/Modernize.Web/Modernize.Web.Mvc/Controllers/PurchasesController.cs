@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+﻿using Modernize.Web.Facade;
 using Modernize.Web.Models;
 using Modernize.Web.Mvc.Data;
-using Modernize.Web.Facade;
+using System.Data.Entity;
+using System.Net;
+using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Modernize.Web.Mvc.Controllers
 {
@@ -21,7 +16,7 @@ namespace Modernize.Web.Mvc.Controllers
         // GET: Purchases
         public async Task<ActionResult> Index()
         {
-            var result = purchaseFacade.GetPurchases();
+            var result = await purchaseFacade.GetPurchases();
             var purchases = db.Purchases.Include(p => p.Customer).Include(p => p.Product);
             return View(await purchases.ToListAsync());
         }
@@ -29,7 +24,7 @@ namespace Modernize.Web.Mvc.Controllers
         // GET: Purchases/Details/5
         public async Task<ActionResult> Details(int? id)
         {
-            Purchase myPurchase = purchaseFacade.GetPurchase();
+            Purchase myPurchase = await purchaseFacade.GetPurchase();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

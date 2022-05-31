@@ -1,14 +1,10 @@
 ﻿using Modernize.Web.Data;
 using Modernize.Web.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modernize.Web.Facade
 {
-    public class CustomerFacade
+    public class CustomerFacade : ICustomerFacade
     {
         private SqlProvider sqlProvider = new SqlProvider("");
         public List<Customer> GetCustomers() => sqlProvider.GetCustomers();
@@ -19,6 +15,6 @@ namespace Modernize.Web.Facade
 
         public void DeleteCustomer(Customer customer) => sqlProvider.DeleteCustomer(customer);
 
-        public Customer GetCustomer() => sqlProvider.GetCustomer();
+        public Customer GetCustomer() => sqlProvider.GetCustomer();        
     }
 }
