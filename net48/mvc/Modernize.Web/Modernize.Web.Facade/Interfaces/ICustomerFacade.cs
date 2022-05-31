@@ -1,12 +1,18 @@
-﻿using System;
+﻿using Modernize.Web.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modernize.Web.Facade
 {
     public interface ICustomerFacade
     {
+        List<Customer> GetCustomers();
+
+        void InsertCustomer(Customer customer);
+
+        void UpdateCustomer(Customer customer);
+
+        void DeleteCustomer(Customer customer);
+
+        Customer GetCustomer();
     }
 }
