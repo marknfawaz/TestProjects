@@ -23,5 +23,9 @@ namespace Modernize.Web.Mvc
             var recordInstance = new ValuesRecord();
             recordInstance.MyMethod();
         }
+        public void MethodReferencingEnumAsParameter()
+        {
+            Console.WriteLine(ValuesEnum.Value1);
+        }
     }
 }
