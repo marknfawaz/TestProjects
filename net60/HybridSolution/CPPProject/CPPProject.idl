@@ -1,0 +1,18 @@
+// CPPProject.idl : IDL source for CPPProject
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CPPProject.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(7dc85997-024f-4db9-985e-55f80b4f6643),
+	version(1.0),
+]
+library CPPProjectLib
+{
+	importlib("stdole2.tlb");
+};
+
