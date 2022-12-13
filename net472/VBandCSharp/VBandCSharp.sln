@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpLib", "CSharpLib\CSharpLib.csproj", "{C35746CE-824F-4BCA-AAE6-E377554C6D9F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBConsole", "VBConsole\VBConsole.vbproj", "{F6EAD67C-11AE-461B-9D8A-D3555746EA9F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "VBLib", "VBLib\VBLib.vbproj", "{7B77F67C-6277-48CE-A2A1-077230722FAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C35746CE-824F-4BCA-AAE6-E377554C6D9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35746CE-824F-4BCA-AAE6-E377554C6D9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35746CE-824F-4BCA-AAE6-E377554C6D9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35746CE-824F-4BCA-AAE6-E377554C6D9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6EAD67C-11AE-461B-9D8A-D3555746EA9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6EAD67C-11AE-461B-9D8A-D3555746EA9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6EAD67C-11AE-461B-9D8A-D3555746EA9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6EAD67C-11AE-461B-9D8A-D3555746EA9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B77F67C-6277-48CE-A2A1-077230722FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B77F67C-6277-48CE-A2A1-077230722FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B77F67C-6277-48CE-A2A1-077230722FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B77F67C-6277-48CE-A2A1-077230722FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31EDAB0E-6E2F-4E64-A475-4A888BF835D9}
+	EndGlobalSection
+EndGlobal
