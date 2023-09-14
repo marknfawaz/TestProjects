@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionWithMissingReferences", "SolutionWithMissingReferences\SolutionWithMissingReferences.csproj", "{DC2DB07A-A014-4B71-8525-52DC87D61196}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionWithMissingReferences", "SolutionWithMissingReferences.csproj", "{DC2DB07A-A014-4B71-8525-52DC87D61196}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{6149D265-FF1A-4F46-BD40-734565ABDEE3}"
 EndProject
