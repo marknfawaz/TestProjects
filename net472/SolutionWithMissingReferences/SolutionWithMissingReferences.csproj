@@ -45,11 +45,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
+    <ProjectReference Include="ClassLibrary1\ClassLibrary1.csproj">
       <Project>{9c943162-0f57-43e5-9538-d2dd9b7e860e}</Project>
       <Name>ClassLibrary1</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ClassLibrary2\ClassLibrary2.csproj">
+    <ProjectReference Include="ClassLibrary2\ClassLibrary2.csproj">
       <Project>{e8dbb281-1575-475d-94e9-d03f0980d0ef}</Project>
       <Name>ClassLibrary2</Name>
     </ProjectReference>
