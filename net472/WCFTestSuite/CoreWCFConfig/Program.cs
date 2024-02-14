@@ -21,7 +21,7 @@ namespace CoreWCFConfig
             services.AddServiceModelServices();
             var startDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName; // just for test... the path needs to come correctly.
 
-            services.AddConfigurationManagerFile(startDirectory + "/Web.Config");
+            services.AddServiceModelConfigurationManagerFile(startDirectory + "/Web.Config");
 
             return services.BuildServiceProvider();
         }
